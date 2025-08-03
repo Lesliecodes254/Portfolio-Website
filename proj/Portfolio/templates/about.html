@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Kimberly's Portfolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @keyframes gradientFlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #ff8800ef 0%, #667eea 50%, #764ba2 100%);
+            background-size: 400% 400%;
+            animation: gradientFlow 15s ease infinite;
+            min-height: 100vh;
+        }
+
+        .main {
+            padding: 20px;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        .navbar {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(28px);
+            border-radius: 28px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            width: 86%;
+            display: flex;
+            margin: auto;
+            padding: 15px 30px;
+            align-items: center;
+            justify-content: space-between;
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+        }
+
+        .navbar .logo {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #ff6b6b, #feca57);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            color: white;
+            font-size: 24px;
+        }
+
+        ul {
+            display: flex;
+            list-style: none;
+            gap: 10px;
+        }
+
+        ul li a {
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.9);
+            padding: 10px 20px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        ul li a:hover, ul li a.active {
+            color: #feca57;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .section {
+            padding-top: 120px;
+            min-height: 100vh;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .content-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 50px;
+            background: linear-gradient(45deg, #ff6b6b, #feca57, #48dbfb);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 3s ease-in-out infinite;
+        }
+
+        .content-text {
+            font-size: 18px;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 30px;
+        }
+
+        .icons {
+            position: fixed;
+            left: 50px;
+            bottom: 50px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 999;
+        }
+
+        .icons a {
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 24px;
+            transition: all 0.3s ease;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .icons ion-icon {
+            font-size: 24px;
+        }
+
+        .icons a:hover {
+            color: #feca57;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+
+        @media (max-width: 968px) {
+            .navbar {
+                flex-direction: column;
+                gap: 20px;
+                padding: 20px;
+                position: relative;
+                top: 0;
+                transform: none;
+                left: 0;
+            }
+
+            .section {
+                padding-top: 20px;
+            }
+
+            .content-section {
+                margin: 20px;
+                padding: 30px 20px;
+            }
+
+            .icons {
+                position: static;
+                flex-direction: row;
+                justify-content: center;
+                margin-top: 40px;
+                left: auto;
+                bottom: auto;
+            }
+
+            ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="navbar"> 
+            <div class="logo">K</div>
+            <ul>
+                <li><a href="home.html" class="nav-link">HOME</a></li>
+                <li><a href="about.html" class="nav-link active">ABOUT</a></li>
+                <li><a href="education.html" class="nav-link">EDUCATION</a></li>
+                <li><a href="interests.html" class="nav-link">INTERESTS</a></li>
+                <li><a href="works.html" class="nav-link">MY WORKS</a></li>
+                <li><a href="contact.html"  class="nav-link">CONTACT</a></li>
+            </ul>
+        </div>
+
+        <!-- ABOUT SECTION -->
+        <div class="section">
+            <div class="content-section">
+                <h2 class="section-title">About Me</h2>
+                <div class="content-text">
+                    <p>Hello! My name is Leslie Kimberly Ombima. I’m a student at Jomo Kenyatta University of Agriculture and Technology (JKUAT),
+                        currently pursuing a degree in Information Science. I recently began my journey in web development and coding,
+                        and I'm passionate about learning how to build clean, responsive websites from scratch.</p>
+                    
+                    <p> I enjoy exploring HTML, CSS, and Python, and I’m always curious about how technology can solve real-world problems.
+                        This portfolio is a reflection of my progress and dedication as a beginner developer.</p>
+                    
+                    <p>  I'm excited to continue growing in the tech space, collaborating with others, and turning creative ideas into working projects.</p>
+                    
+                </div>
+            </div>
+        </div>
+
+        <!-- SOCIAL ICONS -->
+        <div class="icons">
+            <a href="https://facebook.com/kimberly.webdev" target="_blank" rel="noopener noreferrer">
+                <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+            <a href="https://instagram.com/kimberly.webdev" target="_blank" rel="noopener noreferrer">
+                <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+            <a href="https://twitter.com/kimberly_webdev" target="_blank" rel="noopener noreferrer">
+                <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+        </div>
+    </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

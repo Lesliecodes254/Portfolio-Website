@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education - Leslie Kimberly</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Navigation */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s ease;
+            padding: 8px 16px;
+            border-radius: 8px;
+        }
+
+        .navbar ul li a:hover {
+            color: #667eea;
+            background: rgba(102, 126, 234, 0.1);
+        }
+
+        /* Header */
+        .page-header {
+            text-align: center;
+            margin-bottom: 50px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            color: #333;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        /* Education Content */
+        .education-content {
+            display: grid;
+            gap: 30px;
+        }
+
+        .education-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .education-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .education-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            gap: 20px;
+        }
+
+        .institution-logo {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .education-info h2 {
+            color: #333;
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .institution {
+            color: #667eea;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .duration {
+            color: #666;
+            font-size: 0.9rem;
+            background: rgba(102, 126, 234, 0.1);
+            padding: 4px 12px;
+            border-radius: 20px;
+            display: inline-block;
+        }
+
+        .education-details {
+            margin-top: 20px;
+        }
+
+        .description {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .highlight-item {
+            background: rgba(102, 126, 234, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+
+        .highlight-item h4 {
+            color: #333;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+
+        .highlight-item p {
+            color: #666;
+            font-size: 0.85rem;
+        }
+
+        /* Skills Section */
+        .skills-acquired {
+            margin-top: 30px;
+            padding: 25px;
+            background: rgba(102, 126, 234, 0.05);
+            border-radius: 15px;
+            border: 1px solid rgba(102, 126, 234, 0.2);
+        }
+
+        .skills-acquired h3 {
+            color: #333;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .skill-category {
+            text-align: center;
+        }
+
+        .skill-category h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+        }
+
+        .skill-tag {
+            background: #667eea;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .navbar ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .education-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .highlights {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animation */
+        .education-card {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .education-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .education-card:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation -->
+        <div class="navbar"> 
+            <img src="Portfolio/Logo.png" class="Logo" height="60px" width="60px" alt="Portfolio Logo">
+            <ul>
+                <li><a href="home.html" class="nav-link">HOME</a></li>
+                <li><a href="about.html" class="nav-link">ABOUT</a></li>
+                <li><a href="education.html" class="nav-link" style="color: #667eea;">EDUCATION</a></li>
+                <li><a href="interests.html" class="nav-link">INTERESTS</a></li>
+                <li><a href="works.html" class="nav-link">MY WORKS</a></li>
+                <li><a href="contact.html"  class="nav-link">CONTACT</a></li>
+            </ul>
+        </div>
+
+        <!-- Page Header -->
+        <div class="page-header">
+            <h1>My Educational Journey</h1>
+            <p>Building a strong foundation in Information Science and Technology</p>
+        </div>
+
+        <!-- Education Content -->
+        <div class="education-content">
+            <!-- Current Education -->
+            <div class="education-card">
+                <div class="education-header">
+                    <div class="institution-logo">
+                        JKUAT
+                    </div>
+                    <div class="education-info">
+                        <h2>Bachelor of Science in Information Science</h2>
+                        <div class="institution">Jomo Kenyatta University of Agriculture and Technology</div>
+                        <div class="duration">2024 - 2028</div>
+                    </div>
+                </div>
+                
+                <div class="education-details">
+                    <p class="description">
+                        Currently pursuing a comprehensive degree in Information Science at one of Kenya's leading technological universities. 
+                        The program combines theoretical knowledge with practical applications in information systems, database management, 
+                        web development, and emerging technologies.
+                    </p>
+                    
+                    <div class="highlights">
+                        <div class="highlight-item">
+                            <h4>Current GPA</h4>
+                            <p>Maintaining excellent academic performance</p>
+                        </div>
+                        <div class="highlight-item">
+                            <h4>Expected Graduation</h4>
+                            <p>2028</p>
+                        </div>
+                    
+                        <div class="highlight-item">
+                            <h4>Location</h4>
+                            <p>Juja, Kiambu County</p>
+                        </div>
+                    </div>
+                </div>
+
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leslie Kimberly - CV</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .cv-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        /* Download Button */
+        .download-section {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .download-btn {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .download-btn:active {
+            transform: translateY(0);
+        }
+
+        /* CV Header */
+        .cv-header {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .cv-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        .cv-header .title {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* CV Content */
+        .cv-content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: #667eea;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #667eea;
+        }
+
+        /* Education Section */
+        .education-item {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: rgba(102, 126, 234, 0.05);
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+
+        .education-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .degree {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .duration {
+            background: #667eea;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .institution {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .description {
+            color: #555;
+            line-height: 1.7;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category {
+            background: rgba(102, 126, 234, 0.05);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .skill-category h4 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+        }
+
+        .skill-tag {
+            background: #667eea;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        /* Objectives Section */
+        .objective {
+            background: rgba(102, 126, 234, 0.05);
+            padding: 25px;
+            border-radius: 10px;
+            font-style: italic;
+            color: #555;
+            text-align: center;
+            line-height: 1.8;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .cv-header h1 {
+                font-size: 2rem;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .education-header {
+                flex-direction: column;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .download-section {
+                display: none;
+            }
+
+            .cv-container {
+                box-shadow: none;
+                border-radius: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Download Button -->
+    <div class="download-section">
+        <button class="download-btn" onclick="downloadCV()">
+            📄 Download CV as PDF
+        </button>
+    </div>
+
+    <!-- CV Container -->
+    <div class="cv-container" id="cv-content">
+        <!-- Header -->
+        <div class="cv-header">
+            <h1>Leslie Kimberly</h1>
+            <div class="title">Information Science Student</div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📧</span>
+                    <span>kimberlyombima254@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <span>📱</span>
+                    <span>+254 757 788 768</span>
+                </div>
+                <div class="contact-item">
+                    <span>📍</span>
+                    <span>Machakos, Kenya</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="cv-content">
+            <!-- Objective -->
+            <div class="section">
+                <h2 class="section-title">Professional Objective</h2>
+                <div class="objective">
+                    Dedicated Information Science student with a passion for technology and innovation. 
+                    Seeking opportunities to apply theoretical knowledge in practical settings while contributing 
+                    to organizational growth and technological advancement. Committed to continuous learning 
+                    and professional development in the dynamic field of information technology.
+                </div>
+            </div>
+
+            <!-- Education -->
+            <div class="section">
+                <h2 class="section-title">Education</h2>
+                <div class="education-item">
+                    <div class="education-header">
+                        <div>
+                            <div class="degree">Bachelor of Science in Information Science</div>
+                            <div class="institution">Jomo Kenyatta University of Agriculture and Technology (JKUAT)</div>
+                        </div>
+                        <div class="duration">2024 - 2028</div>
+                    </div>
+                    <div class="description">
+                        Currently pursuing a comprehensive degree program that combines theoretical knowledge 
+                        with practical applications in information systems, database management, web development, 
+                        and emerging technologies. Located in Juja, Kiambu County, and maintaining excellent 
+                        academic performance throughout the program.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skills -->
+            <div class="section">
+                <h2 class="section-title">Technical Skills & Competencies</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>Programming</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">HTML/CSS</span>
+                            <span class="skill-tag">Python</span>
+                        </div>
+                    </div>
+                   
+
+    <script>
+        function downloadCV() {
+            // Get the CV content
+            const cvContent = document.getElementById('cv-content');
+            
+            // Create a new window for printing
+            const printWindow = window.open('', '_blank');
+            
+            // Create the HTML content for the print window
+            const htmlContent = `
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <title>Leslie Kimberly - CV</title>
+                    <style>
+                        * {
+                            margin: 0;
+                            padding: 0;
+                            box-sizing: border-box;
+                        }
+                        
+                        body {
+                            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                            line-height: 1.6;
+                            color: #333;
+                            background: white;
+                        }
+                        
+                        .cv-container {
+                            max-width: 800px;
+                            margin: 0 auto;
+                            background: white;
+                        }
+                        
+                        .cv-header {
+                            background: linear-gradient(135deg, #667eea, #764ba2);
+                            color: white;
+                            padding: 40px;
+                            text-align: center;
+                        }
+                        
+                        .cv-header h1 {
+                            font-size: 2.5rem;
+                            margin-bottom: 10px;
+                            font-weight: 300;
+                        }
+                        
+                        .cv-header .title {
+                            font-size: 1.2rem;
+                            opacity: 0.9;
+                            margin-bottom: 20px;
+                        }
+                        
+                        .contact-info {
+                            display: flex;
+                            justify-content: center;
+                            gap: 30px;
+                            flex-wrap: wrap;
+                            font-size: 0.9rem;
+                        }
+                        
+                        .contact-item {
+                            display: flex;
+                            align-items: center;
+                            gap: 8px;
+                        }
+                        
+                        .cv-content {
+                            padding: 40px;
+                        }
+                        
+                        .section {
+                            margin-bottom: 40px;
+                        }
+                        
+                        .section-title {
+                            font-size: 1.5rem;
+                            color: #667eea;
+                            margin-bottom: 20px;
+                            padding-bottom: 10px;
+                            border-bottom: 2px solid #667eea;
+                        }
+                        
+                        .education-item {
+                            margin-bottom: 25px;
+                            padding: 20px;
+                            background: rgba(102, 126, 234, 0.05);
+                            border-radius: 10px;
+                            border-left: 4px solid #667eea;
+                        }
+                        
+                        .education-header {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: flex-start;
+                            margin-bottom: 10px;
+                            flex-wrap: wrap;
+                            gap: 10px;
+                        }
+                        
+                        .degree {
+                            font-size: 1.2rem;
+                            font-weight: bold;
+                            color: #333;
+                        }
+                        
+                        .duration {
+                            background: #667eea;
+                            color: white;
+                            padding: 5px 15px;
+                            border-radius: 20px;
+                            font-size: 0.9rem;
+                            font-weight: 500;
+                        }
+                        
+                        .institution {
+                            font-size: 1rem;
+                            color: #666;
+                            margin-bottom: 10px;
+                        }
+                        
+                        .description {
+                            color: #555;
+                            line-height: 1.7;
+                        }
+                        
+                        .skills-grid {
+                            display: grid;
+                            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                            gap: 20px;
+                        }
+                        
+                        .skill-category {
+                            background: rgba(102, 126, 234, 0.05);
+                            padding: 20px;
+                            border-radius: 10px;
+                            text-align: center;
+                        }
+                        
+                        .skill-category h4 {
+                            color: #667eea;
+                            margin-bottom: 15px;
+                            font-size: 1.1rem;
+                        }
+                        
+                        .skill-tags {
+                            display: flex;
+                            flex-wrap: wrap;
+                            gap: 8px;
+                            justify-content: center;
+                        }
+                        
+                        .skill-tag {
+                            background: #667eea;
+                            color: white;
+                            padding: 6px 12px;
+                            border-radius: 15px;
+                            font-size: 0.8rem;
+                            font-weight: 500;
+                        }
+                        
+                        .objective {
+                            background: rgba(102, 126, 234, 0.05);
+                            padding: 25px;
+                            border-radius: 10px;
+                            font-style: italic;
+                            color: #555;
+                            text-align: center;
+                            line-height: 1.8;
+                        }
+                        
+                        @media print {
+                            body {
+                                background: white;
+                            }
+                        }
+                    </style>
+                </head>
+                <body>
+                    ${cvContent.outerHTML}
+                </body>
+                </html>
+
+    </script>
+</body>
+</html>          
